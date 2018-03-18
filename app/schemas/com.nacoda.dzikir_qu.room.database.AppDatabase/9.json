@@ -1,0 +1,45 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 9,
+    "identityHash": "51b8f68f0014e8ff053b0b38810ba4c7",
+    "entities": [
+      {
+        "tableName": "dzikir",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`ids` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `data` TEXT, `title` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "ids",
+            "columnName": "ids",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "data",
+            "columnName": "data",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "id",
+            "columnName": "title",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "ids"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"51b8f68f0014e8ff053b0b38810ba4c7\")"
+    ]
+  }
+}
