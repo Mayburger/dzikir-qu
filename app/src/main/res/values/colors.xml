@@ -2,5 +2,15 @@
 <resources>
     <color name="colorPrimary">#3494a1</color>
     <color name="colorPrimaryDark">#2f8591</color>
-    <color name="colorAccent">#ffef79</color>
+    <color name="colorAccent">#dcd898</color>
+    <color name="colorAccentLight">#fffcd0</color>
+    <color name="colorAccentDark">#aeaa79</color>
+    <color name="colorWhite">#FFF</color>
+    <color name="colorGreyIndicator">#cfcfcf</color>
+    <color name="colorLightGrey">#f2f2f2</color>
+    <color name="colorTextGrey">#747474</color>
+    <color name="colorBlack">#000</color>
+    <color name="colorAlphaBlack">#39000000</color>
+
+    <color name="colorGreyOdd">#f7f7f7</color>
 </resources>

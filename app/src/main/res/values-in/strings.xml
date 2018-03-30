@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Aah Hello!</string>
+    <string name="first_run">first_run</string>
+
+    <string name="home">Beranda</string>
+    <string name="settings">Pengaturan</string>
+    <string name="rate">Ulasan</string>
+    <string name="about">Tentang</string>
+
+    <string name="morning_remembrance">Dzikir Pagi</string>
+    <string name="evening_remembrance">Dzikir Petang</string>
+    <string name="remembrance_after_salah">Dzikir Setelah Shalat</string>
+    <string name="remembrance_before_sleep">Dzikir Sebelum Tidur</string>
+
+    <string name="read">Baca</string>
+    <string name="read_quran">Baca Al-Quran</string>
+
+    <string name="main_subtitle">Kolesi Dzikir</string>
+    <string name="main_description">Dzikir kepada Allah Subhanahu wa Ta’ala memiliki keutamaan-keutamaan yang agung dan keberkahan-keberkahan yang melimpah, baik di dunia maupun di akhirat.\nAplikasi ini dibuat agar umat muslim bisa membaca dzikir sehari-hari didalam handphone-nya masing-masing. Semoga aplikasi ini bisa memudahkan dan menjadi penyemangat kita dalam berdzikir kepada Allah.</string>
+
+    <string name="notes">Catatan</string>
+
+    <string name="audio_unavailable">Audio belum tersedia</string>
+</resources>

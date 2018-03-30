@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:key="screeneng">
+
+    <PreferenceCategory android:title="General" />
+
+    <ListPreference
+        android:defaultValue="@string/english_value"
+        android:entries="@array/pref_language_english"
+        android:entryValues="@array/pref_language_values"
+        android:key="@string/pref_language_key"
+        android:title="@string/pref_language_label_english" />
+
+    <PreferenceCategory android:title="Text"/>
+    <ListPreference
+        android:defaultValue="@string/pref_fontsize_default"
+        android:entries="@array/pref_fontsize_english"
+        android:entryValues="@array/pref_fontsize_values"
+        android:key="@string/pref_fontsize_key"
+        android:title="@string/pref_fontsize_english" />
+
+    <!--<ListPreference-->
+        <!--android:defaultValue="@string/pref_dalignment_default"-->
+        <!--android:entries="@array/pref_alignment_english"-->
+        <!--android:entryValues="@array/pref_alignment_values"-->
+        <!--android:key="@string/pref_dalignment_key"-->
+        <!--android:title="@string/pref_dalignment_english" />-->
+
+    <ListPreference
+        android:defaultValue="@string/pref_qalignment_default"
+        android:entries="@array/pref_alignment_english"
+        android:entryValues="@array/pref_alignment_values"
+        android:key="@string/pref_qalignment_key"
+        android:title="@string/pref_qalignment_english" />
+
+</PreferenceScreen>

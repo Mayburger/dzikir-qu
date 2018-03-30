@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:key="screeneng">
+
+    <PreferenceCategory android:title="Umum" />
+
+    <ListPreference
+        android:defaultValue="@string/english_value"
+        android:entries="@array/pref_language_indonesia"
+        android:entryValues="@array/pref_language_values"
+        android:key="@string/pref_language_key"
+        android:title="@string/pref_language_label_indonesia" />
+
+    <PreferenceCategory android:title="Teks" />
+
+    <ListPreference
+        android:defaultValue="@string/pref_fontsize_default"
+        android:entries="@array/pref_fontsize_indonesia"
+        android:entryValues="@array/pref_fontsize_values"
+        android:key="@string/pref_fontsize_key"
+        android:title="@string/pref_fontsize_indonesia" />
+
+    <!--<ListPreference-->
+        <!--android:defaultValue="@string/pref_dalignment_default"-->
+        <!--android:entries="@array/pref_alignment_indonesia"-->
+        <!--android:entryValues="@array/pref_alignment_values"-->
+        <!--android:key="@string/pref_dalignment_key"-->
+        <!--android:title="@string/pref_dalignment_indonesia" />-->
+
+    <ListPreference
+        android:defaultValue="@string/pref_qalignment_default"
+        android:entries="@array/pref_alignment_indonesia"
+        android:entryValues="@array/pref_alignment_values"
+        android:key="@string/pref_qalignment_key"
+        android:title="@string/pref_qalignment_indonesia" />
+
+</PreferenceScreen>

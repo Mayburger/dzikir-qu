@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Values-->
+    <array name="pref_language_values">
+        <item>en</item>
+        <item>id</item>
+    </array>
+    <array name="pref_fontsize_values">
+        <item>small</item>
+        <item>medium</item>
+        <item>large</item>
+    </array>
+    <array name="pref_alignment_values">
+        <item>standard</item>
+        <item>center</item>
+    </array>
+    <!--Values-->
+
+    <array name="pref_language_english">
+        <item>English</item>
+        <item>Indonesia</item>
+    </array>
+
+    <array name="pref_language_indonesia">
+        <item>Inggris</item>
+        <item>Indonesia</item>
+    </array>
+
+    <array name="pref_fontsize_english">
+        <item>Small</item>
+        <item>Normal</item>
+        <item>Large</item>
+    </array>
+
+    <array name="pref_fontsize_indonesia">
+        <item>Kecil</item>
+        <item>Sedang</item>
+        <item>Besar</item>
+    </array>
+
+    <array name="pref_alignment_english">
+        <item>Standard</item>
+        <item>Center</item>
+    </array>
+
+    <array name="pref_alignment_indonesia">
+        <item>Standar</item>
+        <item>Tengah</item>
+    </array>
+
+</resources>

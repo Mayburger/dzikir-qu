@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+
+        <ImageView
+            android:id="@+id/kufic_small"
+            android:layout_width="180dp"
+            android:layout_centerInParent="true"
+            android:layout_height="180dp"
+            android:src="@drawable/bismillah_kufic" />
+        <ImageView
+            android:id="@+id/kufic_large"
+            android:layout_width="320dp"
+            android:layout_centerInParent="true"
+            android:layout_height="320dp"
+            android:src="@drawable/bismillah_kufic" />
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerInParent="true"
+            android:padding="4dp"
+            android:src="@drawable/dzikirvector" />
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -4,10 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.nacoda.dzikir_qu.DetailActivity">
+    tools:context="com.nacoda.dzikirqu.mvp.DetailActivity">
 
     <FrameLayout
         android:id="@+id/frame_detail"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+
+    <FrameLayout
+        android:id="@+id/frame_dzikir"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/header" />
+
 </RelativeLayout>

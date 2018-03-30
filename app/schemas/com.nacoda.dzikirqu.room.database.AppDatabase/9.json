@@ -1,0 +1,95 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 9,
+    "identityHash": "82d03c6a0b7a8cda09617cba6e6fccda",
+    "entities": [
+      {
+        "tableName": "dzikir",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`ids` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `data` TEXT, `id` TEXT, `language` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "ids",
+            "columnName": "ids",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "data",
+            "columnName": "data",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "language",
+            "columnName": "language",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "ids"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "quran",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`ids` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `id` TEXT, `language` TEXT, `name` TEXT, `results` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "ids",
+            "columnName": "ids",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "language",
+            "columnName": "language",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "results",
+            "columnName": "results",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "ids"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"82d03c6a0b7a8cda09617cba6e6fccda\")"
+    ]
+  }
+}
