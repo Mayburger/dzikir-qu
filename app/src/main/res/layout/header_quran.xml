@@ -49,7 +49,7 @@
             android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
             android:padding="12dp"
-            android:src="@drawable/play_icon" />
+            android:src="@drawable/play_dark" />
 
     </RelativeLayout>
 </LinearLayout>

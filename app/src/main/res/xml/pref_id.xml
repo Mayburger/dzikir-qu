@@ -11,6 +11,13 @@
         android:key="@string/pref_language_key"
         android:title="@string/pref_language_label_indonesia" />
 
+    <ListPreference
+        android:defaultValue="@string/light_value"
+        android:entries="@array/pref_theme_indonesia"
+        android:entryValues="@array/pref_theme_values"
+        android:key="@string/pref_theme_key"
+        android:title="@string/pref_theme_label_indonesia" />
+
     <PreferenceCategory android:title="Teks" />
 
     <ListPreference
@@ -21,11 +28,11 @@
         android:title="@string/pref_fontsize_indonesia" />
 
     <!--<ListPreference-->
-        <!--android:defaultValue="@string/pref_dalignment_default"-->
-        <!--android:entries="@array/pref_alignment_indonesia"-->
-        <!--android:entryValues="@array/pref_alignment_values"-->
-        <!--android:key="@string/pref_dalignment_key"-->
-        <!--android:title="@string/pref_dalignment_indonesia" />-->
+    <!--android:defaultValue="@string/pref_dalignment_default"-->
+    <!--android:entries="@array/pref_alignment_indonesia"-->
+    <!--android:entryValues="@array/pref_alignment_values"-->
+    <!--android:key="@string/pref_dalignment_key"-->
+    <!--android:title="@string/pref_dalignment_indonesia" />-->
 
     <ListPreference
         android:defaultValue="@string/pref_qalignment_default"

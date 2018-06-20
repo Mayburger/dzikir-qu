@@ -1,5 +1,4 @@
 <resources>
-    <string name="app_name">Aah Hello!</string>
     <string name="first_run">first_run</string>
 
     <string name="home">Beranda</string>
@@ -16,7 +15,8 @@
     <string name="read_quran">Baca Al-Quran</string>
 
     <string name="main_subtitle">Kolesi Dzikir</string>
-    <string name="main_description">Dzikir kepada Allah Subhanahu wa Ta’ala memiliki keutamaan-keutamaan yang agung dan keberkahan-keberkahan yang melimpah, baik di dunia maupun di akhirat.\nAplikasi ini dibuat agar umat muslim bisa membaca dzikir sehari-hari didalam handphone-nya masing-masing. Semoga aplikasi ini bisa memudahkan dan menjadi penyemangat kita dalam berdzikir kepada Allah.</string>
+    <string name="about_description">Dzikir kepada Allah Subhanahu wa Ta’ala memiliki keutamaan-keutamaan yang agung dan keberkahan-keberkahan yang melimpah, baik di dunia maupun di akhirat.\nAplikasi ini dibuat agar umat muslim bisa membaca dzikir sehari-hari didalam handphone-nya masing-masing. Semoga aplikasi ini bisa memudahkan dan menjadi penyemangat kita dalam berdzikir kepada Allah.</string>
+    <string name="main_description">Aplikasi ini dibuat untuk memudahkan kita untuk membaca dzikir sehari-hari dari handphone kita. Kami harap aplikasi ini bisa berguna bagi umat muslim. Terima kasih! </string>
 
     <string name="notes">Catatan</string>
 

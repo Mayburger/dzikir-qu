@@ -6,6 +6,12 @@
         <item>en</item>
         <item>id</item>
     </array>
+
+    <array name="pref_theme_values">
+        <item>dark</item>
+        <item>light</item>
+    </array>
+
     <array name="pref_fontsize_values">
         <item>small</item>
         <item>medium</item>
@@ -25,6 +31,16 @@
     <array name="pref_language_indonesia">
         <item>Inggris</item>
         <item>Indonesia</item>
+    </array>
+
+    <array name="pref_theme_english">
+        <item>Dark</item>
+        <item>Light</item>
+    </array>
+
+    <array name="pref_theme_indonesia">
+        <item>Gelap</item>
+        <item>Terang</item>
     </array>
 
     <array name="pref_fontsize_english">

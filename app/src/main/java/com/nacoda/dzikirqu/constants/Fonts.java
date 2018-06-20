@@ -22,6 +22,7 @@ public class Fonts {
     public static String SERIF = "serif";
     public static String SERIFBOLD = "serif_bold";
     public static String MONTSERRATBLACK = "montserrat_black";
+    public static String SIMPLYROUNDED = "simplyrounded";
 
 
     public static void init(Context context, View rootView, String fontName) {

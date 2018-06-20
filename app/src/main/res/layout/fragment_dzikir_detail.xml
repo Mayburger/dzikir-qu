@@ -10,16 +10,19 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="?backgroundColor"
         android:orientation="vertical">
+
         <android.support.v4.view.ViewPager
             android:id="@+id/pager"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/header" />
+            android:layout_below="@id/header"
+            android:background="?backgroundColor" />
 
         <RelativeLayout
-            android:layout_width="match_parent"
             android:id="@+id/footer"
+            android:layout_width="match_parent"
             android:layout_height="68dp"
             android:layout_alignParentBottom="true">
 
@@ -27,18 +30,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="68dp"
                 android:layout_alignParentBottom="true"
-                android:background="@drawable/footer_primary" />
+                android:background="?footerBackground" />
 
             <RelativeLayout
                 android:id="@+id/back"
                 android:layout_width="68dp"
                 android:layout_height="68dp"
                 android:layout_alignParentBottom="true"
-                android:background="@drawable/rounded_top_right_primary_dark">
+                android:background="?attr/vpBackBackground">
 
                 <ImageView
+                    android:id="@+id/iv_back"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="?selectableItemBackgroundBorderless"
                     android:paddingBottom="16dp"
                     android:paddingEnd="24dp"
                     android:paddingStart="8dp"
@@ -52,16 +57,18 @@
                 android:layout_height="68dp"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentEnd="true"
-                android:background="@drawable/rounded_top_left_primary_dark">
+                android:background="?attr/vpNextBackground">
 
                 <ImageView
+                    android:id="@+id/iv_next"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="?selectableItemBackgroundBorderless"
                     android:paddingBottom="16dp"
                     android:paddingEnd="8dp"
                     android:paddingStart="24dp"
                     android:paddingTop="24dp"
-                    android:src="@drawable/ic_next_white" />
+                    android:src="@drawable/ic_next_light" />
             </RelativeLayout>
 
             <ru.tinkoff.scrollingpagerindicator.ScrollingPagerIndicator
@@ -69,8 +76,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                app:spi_dotColor="@color/colorWhite"
-                app:spi_dotSelectedColor="@color/colorAccent"
+                app:spi_dotColor="@color/colorGreyIndicator"
+                app:spi_dotSelectedColor="?indicatorColor"
                 app:spi_dotSelectedSize="14dp"
                 app:spi_dotSize="8dp" />
 
@@ -82,19 +89,23 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/colorPrimary">
+                android:orientation="vertical">
 
-                <include layout="@layout/header" />
+                <android.support.v7.widget.Toolbar
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:contentInsetEnd="0dp"
+                    app:contentInsetLeft="0dp"
+                    app:contentInsetRight="0dp"
+                    app:contentInsetStart="0dp">
 
-            </RelativeLayout>
+                    <include layout="@layout/header_dzikir" />
+                </android.support.v7.widget.Toolbar>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="@drawable/shadow" />
+            </LinearLayout>
 
         </LinearLayout>
 

@@ -21,26 +21,26 @@
             <View
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:background="@drawable/rounded_bottom_right_primary_dark" />
+                android:background="@drawable/bottom_right_dark" />
 
             <View
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_alignParentRight="true"
-                android:background="@drawable/rounded_bottom_left_primary_dark" />
+                android:background="@drawable/bottom_left_dark" />
 
             <View
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentRight="true"
-                android:background="@drawable/rounded_top_left_primary_dark" />
+                android:background="@drawable/top_left_dark" />
 
             <View
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_alignParentBottom="true"
-                android:background="@drawable/rounded_top_right_primary_dark" />
+                android:background="@drawable/top_right_dark" />
 
             <View
                 android:layout_width="match_parent"
@@ -69,7 +69,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="24dp"
                 android:layout_marginTop="24dp"
-                android:background="@drawable/bismillah" />
+                android:background="@drawable/bismillah_black" />
         </RelativeLayout>
 
 

@@ -65,11 +65,11 @@ public class QuranActivity extends MvpActivity<QuranPresenter> implements QuranV
                         if (player.isPlaying()) {
                             player.stop();
                             player.reset();
-                            audio.setImageResource(R.drawable.play_icon);
+                            audio.setImageResource(R.drawable.play_dark);
                         } else {
                             File file = new File("/sdcard/" + URI.DIRECTORY + "/" + audio_name + ".mp3");
                             if (file.exists()) {
-                                audio.setImageResource(R.drawable.stop_icon);
+                                audio.setImageResource(R.drawable.stop_light);
                                 audioPlayer(audio_name + ".mp3");
 
                             } else {
@@ -83,11 +83,11 @@ public class QuranActivity extends MvpActivity<QuranPresenter> implements QuranV
                     if (player.isPlaying()) {
                         player.stop();
                         player.reset();
-                        audio.setImageResource(R.drawable.play_icon);
+                        audio.setImageResource(R.drawable.play_dark);
                     } else {
                         File file = new File("/sdcard/" + URI.DIRECTORY + "/" + audio_name + ".mp3");
                         if (file.exists()) {
-                            audio.setImageResource(R.drawable.stop_icon);
+                            audio.setImageResource(R.drawable.stop_light);
                             audioPlayer(audio_name + ".mp3");
 
                         } else {
@@ -99,11 +99,11 @@ public class QuranActivity extends MvpActivity<QuranPresenter> implements QuranV
                 if (player.isPlaying()) {
                     player.stop();
                     player.reset();
-                    audio.setImageResource(R.drawable.play_icon);
+                    audio.setImageResource(R.drawable.play_dark);
                 } else {
                     File file = new File("/sdcard/" + URI.DIRECTORY + "/" + audio_name + ".mp3");
                     if (file.exists()) {
-                        audio.setImageResource(R.drawable.stop_icon);
+                        audio.setImageResource(R.drawable.stop_light);
                         audioPlayer(audio_name + ".mp3");
 
                     } else {
@@ -143,7 +143,7 @@ public class QuranActivity extends MvpActivity<QuranPresenter> implements QuranV
     @Override
     public void onFinishDownloading(String audioName) {
         audioPlayer(audioName + ".mp3");
-        audio.setImageResource(R.drawable.stop_icon);
+        audio.setImageResource(R.drawable.stop_light);
     }
 
     @OnClick({R.id.toolbar_back, R.id.audio})

@@ -8,9 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.daimajia.androidanimations.library.Techniques;
-import com.daimajia.androidanimations.library.YoYo;
 import com.nacoda.dzikirqu.R;
 import com.nacoda.dzikirqu.base.BaseRecyclerAdapter;
 import com.nacoda.dzikirqu.constants.Fonts;
@@ -63,7 +60,7 @@ public class DzikirMainAdapter extends BaseRecyclerAdapter<DzikirMainAdapter.Vie
         void onClick(DzikirModel data, int position);
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    class ViewHolder extends RecyclerView.ViewHolder {
         @BindView(R.id.root)
         View root;
         @BindView(R.id.title)
@@ -78,7 +75,7 @@ public class DzikirMainAdapter extends BaseRecyclerAdapter<DzikirMainAdapter.Vie
             ButterKnife.bind(this, itemView);
         }
 
-        public void click(final DzikirModel data, final OnItemClickListener listener, View view, final int position) {
+        void click(final DzikirModel data, final OnItemClickListener listener, View view, final int position) {
             view.setOnClickListener(v -> listener.onClick(data, position));
         }
     }

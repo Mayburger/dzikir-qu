@@ -104,8 +104,12 @@ class DzikirDetailPresenter extends BasePresenter<DzikirDetailView> {
 
         @Override
         protected void onPostExecute(String file_url) {
-            progressDialog.dismiss();
-            mvpView.onFinishDownloading(download.getName());
+            try {
+                progressDialog.dismiss();
+                mvpView.onFinishDownloading(download.getName());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
     }
 

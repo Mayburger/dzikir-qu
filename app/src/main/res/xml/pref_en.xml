@@ -11,6 +11,13 @@
         android:key="@string/pref_language_key"
         android:title="@string/pref_language_label_english" />
 
+    <ListPreference
+        android:defaultValue="@string/light_value"
+        android:entries="@array/pref_theme_english"
+        android:entryValues="@array/pref_theme_values"
+        android:key="@string/pref_theme_key"
+        android:title="@string/pref_theme_label_english" />
+
     <PreferenceCategory android:title="Text"/>
     <ListPreference
         android:defaultValue="@string/pref_fontsize_default"

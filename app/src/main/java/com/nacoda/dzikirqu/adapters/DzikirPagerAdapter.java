@@ -13,9 +13,12 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.nacoda.dzikirqu.mvp.quran.QuranActivity;
 import com.nacoda.dzikirqu.R;
@@ -92,16 +95,16 @@ public class DzikirPagerAdapter extends BasePagerAdapter {
 
         setFontSize(arabic, preferences.getString(Prefs.FONTSIZE, Prefs.FONTSIZE_DEFAULT));
 
-        if (!data.get(position).getTranslation().equals("")) {
-            translation.setText(data.get(position).getTranslation());
-            translation.setTypeface(getFont(context, Fonts.ROBOLIGHT));
-            setFontSize(translation, preferences.getString(Prefs.FONTSIZE, Prefs.FONTSIZE_DEFAULT));
-        } else {
+        if (data.get(position).getSurah() != null) {
             read.setText(getLocalizedString(context, R.string.read));
             readButton.setVisibility(View.VISIBLE);
             translation.setVisibility(View.GONE);
             divider.setVisibility(View.GONE);
             readButton.setOnClickListener(view -> onReadButtonClicked(data.get(position).getAudio_name(), data.get(position).getAudio(), data.get(position).getSurah()));
+        } else {
+            translation.setText(data.get(position).getTranslation());
+            translation.setTypeface(getFont(context, Fonts.ROBOLIGHT));
+            setFontSize(translation, preferences.getString(Prefs.FONTSIZE, Prefs.FONTSIZE_DEFAULT));
         }
 
         source.setText(data.get(position).getSource());
@@ -109,14 +112,12 @@ public class DzikirPagerAdapter extends BasePagerAdapter {
         recite.setText(data.get(position).getRecite());
         setFontSize(recite, preferences.getString(Prefs.FONTSIZE, Prefs.FONTSIZE_DEFAULT));
 
-
         source.setTypeface(getFont(context, Fonts.ROBOTHIN));
 
         if (Boolean.parseBoolean(data.get(position).getBismillah())) {
             surah.setVisibility(View.VISIBLE);
         } else {
             surah.setVisibility(View.GONE);
-
         }
 
         container.addView(v);
@@ -124,6 +125,7 @@ public class DzikirPagerAdapter extends BasePagerAdapter {
     }
 
     private void onReadButtonClicked(String audio_name, String audio_url, String id) {
+        onPressedBounce(readButton, context);
         Intent i = new Intent(context, QuranActivity.class);
         i.putExtra(context.getResources().getString(R.string.audio_name), audio_name);
         i.putExtra(context.getResources().getString(R.string.audio_url), audio_url);

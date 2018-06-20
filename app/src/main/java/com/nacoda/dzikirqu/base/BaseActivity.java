@@ -18,7 +18,10 @@ import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 
+import com.nacoda.dzikirqu.R;
 import com.nacoda.dzikirqu.constants.Prefs;
 
 import org.jetbrains.annotations.NotNull;

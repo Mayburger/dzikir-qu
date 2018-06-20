@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Main.Theme.light" parent="Theme.AppCompat.Light.NoActionBar">
+
+        <!--Default-->
+        <item name="appBarColor">#fff</item>
+        <item name="titleColor">#3494a1</item>
+        <item name="subtitleColor">#a5a4a8</item>
+        <item name="backgroundColor">#f7f7f7</item>
+        <!--Default-->
+
+        <item name="menuIcon">@drawable/ic_menu_primary</item>
+        <item name="frameBackground">@drawable/rounded_bottom_light</item>
+    </style>
+
+    <style name="Main.Theme.dark" parent="Theme.AppCompat.Light.NoActionBar">
+
+        <!--Default-->
+        <item name="appBarColor">#28292e</item>
+        <item name="titleColor">#fff</item>
+        <item name="subtitleColor">#a5a4a8</item>
+        <item name="backgroundColor">#44464f</item>
+        <!--Default-->
+
+        <item name="menuIcon">@drawable/ic_menu_white</item>
+        <item name="frameBackground">@drawable/rounded_bottom_dark</item>
+    </style>
+
+    <declare-styleable name="Main.Theme">
+        <attr name="menuIcon" format="integer"/>
+        <attr name="frameBackground" format="integer"/>
+    </declare-styleable>
+
+</resources>

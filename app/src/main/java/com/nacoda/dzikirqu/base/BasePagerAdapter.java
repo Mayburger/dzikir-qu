@@ -5,6 +5,11 @@ import android.graphics.Typeface;
 import android.support.v4.view.PagerAdapter;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+
+import com.nacoda.dzikirqu.R;
+import com.nacoda.dzikirqu.libs.BounceInterpolator;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -27,6 +32,13 @@ public class BasePagerAdapter extends PagerAdapter {
 
     protected Typeface getFont(Context context, String fontName){
         return Typeface.createFromAsset(context.getAssets(),"fonts/"+fontName+".ttf");
+    }
+
+    public void onPressedBounce(View v, Context context){
+        final Animation myAnim = AnimationUtils.loadAnimation(context, R.anim.bounce);
+        BounceInterpolator interpolator = new BounceInterpolator(0.2, 20);
+        myAnim.setInterpolator(interpolator);
+        v.startAnimation(myAnim);
     }
 
     public String getStringJson(Context context) {

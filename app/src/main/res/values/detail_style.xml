@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Detail.Theme.light" parent="Theme.AppCompat.Light.NoActionBar">
+
+        <!--Default-->
+        <item name="appBarColor">#fff</item>
+        <item name="titleColor">#3494a1</item>
+        <item name="subtitleColor">#747474</item>
+        <item name="backgroundColor">#f7f7f7</item>
+        <!--Default-->
+
+        <item name="dataTextColor">#2d2d2d</item>
+        <item name="indicatorColor">#3494a1</item>
+
+        <item name="vpBackBackground">@drawable/back_light</item>
+        <item name="vpNextBackground">@drawable/next_light</item>
+        <item name="abBackBackground">@drawable/rounded_right_light</item>
+        <item name="abShareBackground">@drawable/rounded_left_light</item>
+        <item name="playIcon">@drawable/play_light</item>
+        <item name="footerBackground">@drawable/rounded_top_light</item>
+        <item name="roundedBackground">@drawable/rounded_light</item>
+        <item name="bismillahColor">@drawable/bismillah_black</item>
+        <item name="menuIcon">@drawable/ic_menu_primary</item>
+    </style>
+
+    <style name="Detail.Theme.dark" parent="Theme.AppCompat.Light.NoActionBar">
+
+        <!--Default-->
+        <item name="appBarColor">#28292e</item>
+        <item name="titleColor">#fff</item>
+        <item name="subtitleColor">#747474</item>
+        <item name="backgroundColor">#44464f</item>
+        <!--Default-->
+
+        <item name="dataTextColor">#fff</item>
+        <item name="indicatorColor">#fff</item>
+
+        <item name="vpBackBackground">@drawable/back_dark</item>
+        <item name="abBackBackground">@drawable/rounded_right_dark</item>
+        <item name="vpNextBackground">@drawable/next_dark</item>
+        <item name="abShareBackground">@drawable/rounded_left_dark</item>
+        <item name="playIcon">@drawable/play_dark</item>
+        <item name="footerBackground">@drawable/rounded_top_dark</item>
+        <item name="roundedBackground">@drawable/rounded_dark</item>
+        <item name="bismillahColor">@drawable/bismillah_white</item>
+    </style>
+
+    <declare-styleable name="Detail.Theme">
+        <attr name="dataTextColor" format="color"/>
+        <attr name="indicatorColor" format="color"/>
+
+        <attr name="vpBackBackground" format="integer" />
+        <attr name="vpNextBackground" format="integer" />
+        <attr name="abBackBackground" format="integer" />
+        <attr name="abShareBackground" format="integer" />
+        <attr name="playIcon" format="integer" />
+        <attr name="footerBackground" format="integer" />
+        <attr name="roundedBackground" format="integer"/>
+        <attr name="bismillahColor" format="integer"/>
+    </declare-styleable>
+
+</resources>

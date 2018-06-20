@@ -75,6 +75,7 @@ public class SplashActivity extends AppCompatActivity {
                     dModel.add(DzikirModel.GsonBuilder(getStringJson("dzikir/id/" + dList.get(i).getId() + ".json")));
                 }
 
+
                 DatabaseInitializer.insertQuranData(AppDatabase.getAppDatabase(SplashActivity.this), qModel);
                 DatabaseInitializer.insertDzikirData(AppDatabase.getAppDatabase(SplashActivity.this), dModel);
 

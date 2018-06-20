@@ -27,8 +27,8 @@
                     android:layout_height="40dp"
                     android:layout_gravity="center"
                     android:layout_marginBottom="8dp"
-                    android:background="@drawable/bismillah"
-                    android:visibility="gone" />
+                    android:background="?bismillahColor"
+                    android:visibility="visible" />
 
                 <TextView
                     android:id="@+id/arabic"
@@ -36,7 +36,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:textAlignment="center"
-                    android:textColor="#2d2d2d"
+                    android:textColor="?dataTextColor"
                     android:textSize="24sp" />
 
                 <View
@@ -46,7 +46,7 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_marginBottom="10dp"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/rounded_primary_dark" />
+                    android:background="?roundedBackground" />
 
                 <TextView
                     android:id="@+id/translation"
@@ -54,7 +54,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:textAlignment="center"
-                    android:textColor="#2d2d2d"
+                    android:textColor="?dataTextColor"
                     android:textSize="14sp" />
 
                 <RelativeLayout
@@ -62,7 +62,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="8dp"
-                    android:background="@drawable/rounded_primary_dark">
+                    android:background="?roundedBackground">
 
                     <TextView
                         android:id="@+id/recite"
@@ -81,11 +81,10 @@
                 <RelativeLayout
                     android:id="@+id/readButton"
                     android:layout_width="wrap_content"
+                    android:visibility="gone"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="8dp"
-                    android:background="@drawable/rounded_accent"
-                    android:visibility="gone">
+                    android:layout_marginTop="8dp">
 
                     <TextView
                         android:id="@+id/read"
@@ -95,6 +94,7 @@
                         android:paddingBottom="4dp"
                         android:paddingLeft="32dp"
                         android:paddingRight="32dp"
+                        android:background="?roundedBackground"
                         android:paddingTop="4dp"
                         android:text="Baca"
                         android:textColor="@color/colorWhite"
@@ -125,6 +125,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textAlignment="center"
+                        android:textColor="?dataTextColor"
                         android:textSize="14sp" />
 
                 </LinearLayout>

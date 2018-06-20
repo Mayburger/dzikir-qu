@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="4dp"
         app:cardBackgroundColor="@color/colorWhite"
-        app:cardCornerRadius="0dp"
+        app:cardCornerRadius="8dp"
         app:cardElevation="0.8dp"
         app:cardUseCompatPadding="true">
 
@@ -52,7 +52,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:background="@drawable/selector" />
+            android:background="?selectableItemBackground" />
     </android.support.v7.widget.CardView>
 
 </RelativeLayout>

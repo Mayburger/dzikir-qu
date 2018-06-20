@@ -5,8 +5,14 @@
     <string name="english_value">en</string>
     <string name="indonesia_value">id</string>
 
+    <string name="dark_value">dark</string>
+    <string name="light_value">light</string>
+
     <string name="pref_language_label_english">Language</string>
     <string name="pref_language_label_indonesia">Bahasa</string>
+
+    <string name="pref_theme_label_english">Theme</string>
+    <string name="pref_theme_label_indonesia">Tema</string>
 
     <string name="pref_fontsize_english">Text Size</string>
     <string name="pref_fontsize_indonesia">Ukuran Teks</string>
@@ -18,6 +24,7 @@
     <string name="pref_qalignment_indonesia">Perataan Teks Quran</string>
 
     <string name="pref_language_key">language</string>
+    <string name="pref_theme_key">theme</string>
     <string name="pref_fontsize_key">fontsize</string>
     <string name="pref_dalignment_key">dalignment</string>
     <string name="pref_qalignment_key">qalignment</string>

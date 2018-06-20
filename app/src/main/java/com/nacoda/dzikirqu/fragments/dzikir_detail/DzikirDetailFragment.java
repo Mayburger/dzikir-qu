@@ -2,7 +2,6 @@ package com.nacoda.dzikirqu.fragments.dzikir_detail;
 
 
 import android.Manifest;
-import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
@@ -15,8 +14,6 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,18 +24,13 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.eftimoff.viewpagertransformers.AccordionTransformer;
 import com.eftimoff.viewpagertransformers.BackgroundToForegroundTransformer;
-import com.eftimoff.viewpagertransformers.RotateDownTransformer;
 import com.nacoda.dzikirqu.R;
 import com.nacoda.dzikirqu.adapters.DzikirPagerAdapter;
 import com.nacoda.dzikirqu.constants.Fonts;
 import com.nacoda.dzikirqu.constants.Prefs;
 import com.nacoda.dzikirqu.constants.URI;
-import com.nacoda.dzikirqu.fragments.dzikir_quran.DzikirQuranFragment;
 import com.nacoda.dzikirqu.model.dzikir.Data;
-import com.nacoda.dzikirqu.room.database.AppDatabase;
-import com.nacoda.dzikirqu.room.utils.DatabaseInitializer;
 import com.nacoda.dzikirqu.ui.MvpFragment;
 
 import java.io.File;
@@ -58,10 +50,8 @@ public class DzikirDetailFragment extends MvpFragment<DzikirDetailPresenter, Fra
 
     @BindView(R.id.pager)
     ViewPager pager;
-    @BindView(R.id.header)
-    LinearLayout header;
     @BindView(R.id.header_content)
-    RelativeLayout headerContent;
+    LinearLayout headerContent;
     @BindView(R.id.title)
     TextView title;
     @BindView(R.id.page)
@@ -70,11 +60,26 @@ public class DzikirDetailFragment extends MvpFragment<DzikirDetailPresenter, Fra
     ImageView audio;
     @BindView(R.id.indicator)
     ScrollingPagerIndicator indicator;
+
     @BindView(R.id.share)
     ImageView share;
+    @BindView(R.id.toolbar_back)
+    ImageView toolbarBack;
+
+    @BindView(R.id.back)
+    RelativeLayout back;
+    @BindView(R.id.iv_back)
+    ImageView ivBack;
+    @BindView(R.id.next)
+    RelativeLayout next;
+    @BindView(R.id.iv_next)
+    ImageView ivNext;
 
     MediaPlayer player;
     Unbinder unbinder;
+    SharedPreferences preferences;
+
+    String theme;
 
     public DzikirDetailFragment() {
 
@@ -89,7 +94,9 @@ public class DzikirDetailFragment extends MvpFragment<DzikirDetailPresenter, Fra
         setupTitle();
         player = new MediaPlayer();
         onPlayerStopped();
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
+
+        preferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
+
         mvpPresenter.getData(getActivity(), getActivity().getIntent().getStringExtra(getString(R.string.id)), preferences.getString(Prefs.LANGUAGE, Prefs.LANGUAGE_DEFAULT));
         indicator.attachToPager(pager);
 
@@ -98,13 +105,35 @@ public class DzikirDetailFragment extends MvpFragment<DzikirDetailPresenter, Fra
             footer.setAnimation(AnimationUtils.loadAnimation(getActivity(), R.anim.downtoup));
         }
 
+        initTheme();
+
+    }
+
+    void initTheme() {
+        title.setTypeface(getFont(getActivity(), Fonts.MONTSERRATBLACK));
+        title.setText(getLocalizedString(getResources().getIdentifier(getActivity().getIntent().getStringExtra(getString(R.string.id)), "string", getActivity().getPackageName())));
+        page.setTypeface(getFont(getActivity(), Fonts.QUICKBOOK));
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        player.stop();
+        player.reset();
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        player.stop();
+        player.reset();
     }
 
     void onPlayerStopped() {
         player.setOnCompletionListener(mediaPlayer -> {
             player.stop();
             player.reset();
-            audio.setImageResource(R.drawable.play_icon);
+            audio.setImageResource(getResources().getIdentifier("play_" + preferences.getString(Prefs.THEME, Prefs.THEME_DEFAULT), "drawable", getActivity().getPackageName()));
         });
     }
 
@@ -126,9 +155,6 @@ public class DzikirDetailFragment extends MvpFragment<DzikirDetailPresenter, Fra
     }
 
     void setupTitle() {
-        title.setText(getLocalizedString(getStringInt(getActivity(), getActivity().getIntent().getStringExtra(getString(R.string.id)))));
-        title.setTypeface(getFont(getActivity(), Fonts.QUICKBOLD));
-        page.setTypeface(getFont(getActivity(), Fonts.ROBOLIGHT));
     }
 
     @OnClick({R.id.next, R.id.back, R.id.toolbar_back})
@@ -153,7 +179,7 @@ public class DzikirDetailFragment extends MvpFragment<DzikirDetailPresenter, Fra
 
     @Override
     public int getFragmentLayout() {
-        return R.layout.fragment_dzikir_detail;
+        return getResources().getIdentifier("fragment_dzikir_detail", "layout", getActivity().getPackageName());
     }
 
     @Override
@@ -167,6 +193,19 @@ public class DzikirDetailFragment extends MvpFragment<DzikirDetailPresenter, Fra
         pager.setAdapter(new DzikirPagerAdapter(getActivity(), data));
         pager.setPageTransformer(true, new BackgroundToForegroundTransformer());
 
+        if (pager.getCurrentItem() == 0) {
+            if (data.get(0).getAudio() != null) {
+                audio.setImageResource(getResources().getIdentifier("play_" + preferences.getString(Prefs.THEME, Prefs.THEME_DEFAULT), "drawable", getActivity().getPackageName()));
+            } else {
+                audio.setImageResource(getResources().getIdentifier("play_no_" + preferences.getString(Prefs.THEME, Prefs.THEME_DEFAULT), "drawable", getActivity().getPackageName()));
+            }
+            player.stop();
+            player.reset();
+            page.setText(String.valueOf(0 + 1) + "/" + String.valueOf(data.size()));
+            audio.setOnClickListener(view -> onAudioButtonClicked(data, 0));
+            share.setOnClickListener(view -> onShareButtonClicked(data.get(0).getArabic(), data.get(0).getTranslation()));
+        }
+
         pager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {/*unused*/}
@@ -174,9 +213,9 @@ public class DzikirDetailFragment extends MvpFragment<DzikirDetailPresenter, Fra
             @Override
             public void onPageSelected(int position) {
                 if (data.get(position).getAudio() != null) {
-                    audio.setImageResource(R.drawable.play_icon);
+                    audio.setImageResource(getResources().getIdentifier("play_" + preferences.getString(Prefs.THEME, Prefs.THEME_DEFAULT), "drawable", getActivity().getPackageName()));
                 } else {
-                    audio.setImageResource(R.drawable.audio_unavailable);
+                    audio.setImageResource(getResources().getIdentifier("play_no_" + preferences.getString(Prefs.THEME, Prefs.THEME_DEFAULT), "drawable", getActivity().getPackageName()));
                 }
                 player.stop();
                 player.reset();
@@ -208,11 +247,11 @@ public class DzikirDetailFragment extends MvpFragment<DzikirDetailPresenter, Fra
                         if (player.isPlaying()) {
                             player.stop();
                             player.reset();
-                            audio.setImageResource(R.drawable.play_icon);
+                            audio.setImageResource(getResources().getIdentifier("play_" + preferences.getString(Prefs.THEME, Prefs.THEME_DEFAULT), "drawable", getActivity().getPackageName()));
                         } else {
                             File file = new File("/sdcard/" + URI.DIRECTORY + "/" + data.get(position).getAudio_name() + ".mp3");
                             if (file.exists()) {
-                                audio.setImageResource(R.drawable.stop_icon);
+                                audio.setImageResource(getResources().getIdentifier("stop_" + preferences.getString(Prefs.THEME, Prefs.THEME_DEFAULT), "drawable", getActivity().getPackageName()));
                                 audioPlayer(data.get(position).getAudio_name() + ".mp3");
 
                             } else {
@@ -226,11 +265,11 @@ public class DzikirDetailFragment extends MvpFragment<DzikirDetailPresenter, Fra
                     if (player.isPlaying()) {
                         player.stop();
                         player.reset();
-                        audio.setImageResource(R.drawable.play_icon);
+                        audio.setImageResource(getResources().getIdentifier("play_" + preferences.getString(Prefs.THEME, Prefs.THEME_DEFAULT), "drawable", getActivity().getPackageName()));
                     } else {
                         File file = new File("/sdcard/" + URI.DIRECTORY + "/" + data.get(position).getAudio_name() + ".mp3");
                         if (file.exists()) {
-                            audio.setImageResource(R.drawable.stop_icon);
+                            audio.setImageResource(getResources().getIdentifier("stop_" + preferences.getString(Prefs.THEME, Prefs.THEME_DEFAULT), "drawable", getActivity().getPackageName()));
                             audioPlayer(data.get(position).getAudio_name() + ".mp3");
 
                         } else {
@@ -242,11 +281,11 @@ public class DzikirDetailFragment extends MvpFragment<DzikirDetailPresenter, Fra
                 if (player.isPlaying()) {
                     player.stop();
                     player.reset();
-                    audio.setImageResource(R.drawable.play_icon);
+                    audio.setImageResource(getResources().getIdentifier("play_" + preferences.getString(Prefs.THEME, Prefs.THEME_DEFAULT), "drawable", getActivity().getPackageName()));
                 } else {
                     File file = new File("/sdcard/" + URI.DIRECTORY + "/" + data.get(position).getAudio_name() + ".mp3");
                     if (file.exists()) {
-                        audio.setImageResource(R.drawable.stop_icon);
+                        audio.setImageResource(getResources().getIdentifier("stop_" + preferences.getString(Prefs.THEME, Prefs.THEME_DEFAULT), "drawable", getActivity().getPackageName()));
                         audioPlayer(data.get(position).getAudio_name() + ".mp3");
 
                     } else {
@@ -263,20 +302,6 @@ public class DzikirDetailFragment extends MvpFragment<DzikirDetailPresenter, Fra
     @Override
     public void onFinishDownloading(String audioName) {
         audioPlayer(audioName + ".mp3");
-        audio.setImageResource(R.drawable.stop_icon);
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // TODO: inflate a fragment view
-        View rootView = super.onCreateView(inflater, container, savedInstanceState);
-        unbinder = ButterKnife.bind(this, rootView);
-        return rootView;
-    }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        unbinder.unbind();
+        audio.setImageResource(getResources().getIdentifier("stop_" + preferences.getString(Prefs.THEME, Prefs.THEME_DEFAULT), "drawable", getActivity().getPackageName()));
     }
 }

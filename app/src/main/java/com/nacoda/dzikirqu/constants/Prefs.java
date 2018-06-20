@@ -6,6 +6,8 @@ package com.nacoda.dzikirqu.constants;
 
 public class Prefs {
     public static String LANGUAGE = "language";
+    public static String THEME = "theme";
+    public static String THEME_DEFAULT = "light";
     public static String LANGUAGE_DEFAULT = "en";
     public static String IsMainActive = "is_main_active";
 
@@ -14,8 +16,5 @@ public class Prefs {
 
     public static String QALIGNMENT = "qalignment";
     public static String QALIGNMENT_DEFAULT = "standard";
-
-    public static String DALIGNMENT = "dalignment";
-    public static String DALIGNMENT_DEFAULT = "center";
 
 }

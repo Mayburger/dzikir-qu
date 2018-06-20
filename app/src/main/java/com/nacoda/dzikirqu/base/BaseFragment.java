@@ -18,8 +18,11 @@ import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Toast;
 
+import com.nacoda.dzikirqu.R;
 import com.nacoda.dzikirqu.constants.Prefs;
 
 import org.jetbrains.annotations.NotNull;
