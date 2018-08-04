@@ -39,7 +39,7 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:padding="10dp"
-                android:src="@drawable/settings_icon" />
+                android:src="@drawable/settings_icon_grey" />
 
             <TextView
                 android:id="@+id/settings_text"
@@ -88,7 +88,7 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:padding="10dp"
-                android:src="@drawable/about_icon" />
+                android:src="@drawable/about_icon_grey" />
 
             <TextView
                 android:id="@+id/about_text"

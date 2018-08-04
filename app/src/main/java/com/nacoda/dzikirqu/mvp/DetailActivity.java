@@ -11,6 +11,7 @@ import android.support.v4.content.ContextCompat;
 
 import com.nacoda.dzikirqu.R;
 import com.nacoda.dzikirqu.base.BaseActivity;
+import com.nacoda.dzikirqu.constants.Fonts;
 import com.nacoda.dzikirqu.constants.Prefs;
 import com.nacoda.dzikirqu.fragments.dzikir_detail.DzikirDetailFragment;
 

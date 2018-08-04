@@ -1,6 +1,8 @@
 package com.nacoda.dzikirqu.adapters;
 
 import android.app.Activity;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -11,6 +13,7 @@ import android.widget.TextView;
 import com.nacoda.dzikirqu.R;
 import com.nacoda.dzikirqu.base.BaseRecyclerAdapter;
 import com.nacoda.dzikirqu.constants.Fonts;
+import com.nacoda.dzikirqu.constants.Prefs;
 import com.nacoda.dzikirqu.model.dzikir.DzikirModel;
 
 import java.util.List;
@@ -43,11 +46,12 @@ public class DzikirMainAdapter extends BaseRecyclerAdapter<DzikirMainAdapter.Vie
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(mContext);
         holder.title.setText(getLocalizedString(mContext, getStringInt(mContext, data.get(position).getId())));
         holder.title.setTypeface(getFont(mContext, Fonts.QUICKBOLD));
         holder.count.setText(data.get(position).getData().size()+ " Dzikir");
         holder.count.setTypeface(getFont(mContext, Fonts.QUICKBOOK));
-        holder.icon.setImageResource(mContext.getResources().getIdentifier(data.get(position).getId() + "_icon", "drawable", mContext.getPackageName()));
+        holder.icon.setImageResource(mContext.getResources().getIdentifier(data.get(position).getId() + "_icon_" + preferences.getString(Prefs.THEME, Prefs.THEME_DEFAULT), "drawable", mContext.getPackageName()));
         holder.click(data.get(position), listener, holder.root, position);
     }
 

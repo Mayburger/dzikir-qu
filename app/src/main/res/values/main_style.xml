@@ -12,24 +12,45 @@
 
         <item name="menuIcon">@drawable/ic_menu_primary</item>
         <item name="frameBackground">@drawable/rounded_bottom_light</item>
+        <item name="dialogTextColor">@color/colorTextGrey</item>
+        <item name="settingsIcon">@drawable/settings_icon_grey</item>
+        <item name="aboutIcon">@drawable/about_icon_grey</item>
+        <item name="rowTextColor">@color/colorTextGrey</item>
+        <item name="rowBackground">@color/colorWhite</item>
+        <item name="rowBackgroundDark">@color/colorLightGrey</item>
+        <item name="descTextColor">@color/colorTextGrey</item>
     </style>
 
     <style name="Main.Theme.dark" parent="Theme.AppCompat.Light.NoActionBar">
 
         <!--Default-->
-        <item name="appBarColor">#28292e</item>
+        <item name="appBarColor">@color/colorDarkerBackground</item>
         <item name="titleColor">#fff</item>
         <item name="subtitleColor">#a5a4a8</item>
-        <item name="backgroundColor">#44464f</item>
+        <item name="backgroundColor">#1b2429</item>
         <!--Default-->
 
         <item name="menuIcon">@drawable/ic_menu_white</item>
         <item name="frameBackground">@drawable/rounded_bottom_dark</item>
+        <item name="settingsIcon">@drawable/settings_icon_white</item>
+        <item name="aboutIcon">@drawable/about_icon_white</item>
+        <item name="dialogTextColor">@color/colorWhite</item>
+        <item name="rowTextColor">@color/colorWhite</item>
+        <item name="rowBackground">@color/colorDarkBackground</item>
+        <item name="rowBackgroundDark">@color/colorDarkerBackground</item>
+        <item name="descTextColor">@color/colorGreyIndicator</item>
     </style>
 
     <declare-styleable name="Main.Theme">
         <attr name="menuIcon" format="integer"/>
         <attr name="frameBackground" format="integer"/>
+        <attr name="dialogTextColor" format="color"/>
+        <attr name="settingsIcon" format="integer"/>
+        <attr name="aboutIcon" format="integer"/>
+        <attr name="rowTextColor" format="color"/>
+        <attr name="rowBackground" format="color"/>
+        <attr name="rowBackgroundDark" format="color"/>
+        <attr name="descTextColor" format="color"/>
     </declare-styleable>
 
 </resources>

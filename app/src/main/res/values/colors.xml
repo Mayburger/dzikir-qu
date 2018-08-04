@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--<color name="colorThemedark">#3494a1</color>-->
+    <!--<color name="colorThemelight">#fff</color>-->
+    <!--<color name="colorThemeTextlight">#3494a1</color>-->
+    <!--<color name="colorThemeTextdark">#fff</color>-->
+
     <color name="colorPrimary">#3494a1</color>
-
-    <color name="colorThemedark">#3494a1</color>
-    <color name="colorThemelight">#fff</color>
-    <color name="colorThemeTextlight">#3494a1</color>
-    <color name="colorThemeTextdark">#fff</color>
-
     <color name="colorPrimaryDark">#2f8591</color>
+
     <color name="colorAccent">#dcd898</color>
     <color name="colorAccentLight">#fffcd0</color>
     <color name="colorAccentDark">#aeaa79</color>
+
     <color name="colorWhite">#FFF</color>
     <color name="colorGreyIndicator">#cfcfcf</color>
     <color name="colorLightGrey">#f2f2f2</color>
@@ -19,6 +20,20 @@
     <color name="colorBlack">#000</color>
     <color name="colorAlphaBlack">#39000000</color>
     <color name="colorTextDark">#14263c</color>
+
+    <color name="colorDarkBackground">#2d3c45</color>
+    <color name="colorDarkerBackground">#243138</color>
+    <color name="colorDarkerThanDarkerBackground">#1c262b</color>
+
+    <!--Text color for the settings screen-->
+    <color name="colorTextPrimaryDark">#fff</color>
+    <color name="colorTextSecondaryDark">#dbdbdb</color>
+    <color name="colorTextTertiaryDark">#FFFF</color>
+
+    <color name="colorTextPrimaryLight">#202020</color>
+    <color name="colorTextSecondaryLight">#848484</color>
+    <color name="colorTextTertiaryLight">#bbbbbb</color>
+    <!--Text color for the settings screen-->
 
     <color name="colorGreyOdd">#f7f7f7</color>
 </resources>

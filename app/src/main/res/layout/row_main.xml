@@ -9,8 +9,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="4dp"
-        app:cardBackgroundColor="@color/colorWhite"
-        app:cardCornerRadius="8dp"
+        app:cardBackgroundColor="?attr/rowBackground"
+        app:cardCornerRadius="24dp"
         app:cardElevation="0.8dp"
         app:cardUseCompatPadding="true">
 
@@ -23,7 +23,7 @@
                 android:id="@+id/icon"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:background="@color/colorLightGrey"
+                android:background="?attr/rowBackgroundDark"
                 android:padding="16dp" />
 
             <LinearLayout
@@ -36,12 +36,14 @@
                 <TextView
                     android:id="@+id/title"
                     android:layout_width="wrap_content"
+                    android:textColor="?attr/rowTextColor"
                     android:layout_height="wrap_content"
                     android:textSize="24sp" />
 
                 <TextView
                     android:id="@+id/count"
                     android:layout_width="wrap_content"
+                    android:textColor="?attr/rowTextColor"
                     android:layout_height="wrap_content"
                     android:textSize="16sp" />
             </LinearLayout>

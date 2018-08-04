@@ -2,14 +2,17 @@ package com.nacoda.dzikirqu.mvp;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
 import com.nacoda.dzikirqu.R;
+import com.nacoda.dzikirqu.constants.Prefs;
 import com.nacoda.dzikirqu.libs.AppPreference;
 import com.nacoda.dzikirqu.model.ListModel;
 import com.nacoda.dzikirqu.model.dzikir.DzikirModel;
@@ -36,18 +39,22 @@ public class SplashActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        initTheme();
         setContentView(R.layout.activity_splash);
         ButterKnife.bind(this);
-
         kuficLarge.startAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.rotate_left));
         kufic_small.startAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.rotate_right));
+        new LoadDzikir().execute();
+    }
 
 
-        new LoadKamus().execute();
+    void initTheme() {
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        setTheme(getResources().getIdentifier("Splash.Theme." + preferences.getString(Prefs.THEME, Prefs.THEME_DEFAULT), "style", getApplicationContext().getPackageName()));
     }
 
     @SuppressLint("StaticFieldLeak")
-    private class LoadKamus extends AsyncTask<Void, Integer, Void> {
+    private class LoadDzikir extends AsyncTask<Void, Integer, Void> {
 
         @Override
         protected void onPreExecute() {

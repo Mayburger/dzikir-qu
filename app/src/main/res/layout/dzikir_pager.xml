@@ -74,7 +74,7 @@
                         android:paddingRight="10dp"
                         android:paddingTop="4dp"
                         android:text="Recite Once"
-                        android:textColor="@color/colorWhite"
+                        android:textColor="?attr/reciteTextColor"
                         android:textSize="14sp" />
                 </RelativeLayout>
 
@@ -97,7 +97,7 @@
                         android:background="?roundedBackground"
                         android:paddingTop="4dp"
                         android:text="Baca"
-                        android:textColor="@color/colorWhite"
+                        android:textColor="?attr/reciteTextColor"
                         android:textSize="24sp" />
                 </RelativeLayout>
 

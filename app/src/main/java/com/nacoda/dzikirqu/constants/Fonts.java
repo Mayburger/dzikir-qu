@@ -23,6 +23,7 @@ public class Fonts {
     public static String SERIFBOLD = "serif_bold";
     public static String MONTSERRATBLACK = "montserrat_black";
     public static String SIMPLYROUNDED = "simplyrounded";
+    public static String MONTSERRATLIGHT = "montserrat_light";
 
 
     public static void init(Context context, View rootView, String fontName) {
@@ -38,6 +39,7 @@ public class Fonts {
             }
         } catch (Exception ignored) {
         }
+
     }
 
     private static Typeface getFont(Context context, String fontName) {

@@ -38,7 +38,6 @@ public class SettingsFragment extends PreferenceFragment implements
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
         addPreferencesFromResource(getActivity().getResources().getIdentifier("pref_" + preferences.getString(Prefs.LANGUAGE, Prefs.LANGUAGE_DEFAULT), "xml", getActivity().getPackageName()));
 
@@ -56,6 +55,7 @@ public class SettingsFragment extends PreferenceFragment implements
 
     }
 
+
     @Override
     public void onSharedPreferenceChanged(final SharedPreferences sharedPreferences, String key) {
         Preference preference = findPreference(key);
@@ -69,18 +69,9 @@ public class SettingsFragment extends PreferenceFragment implements
             }
 
             if (preference instanceof ListPreference) {
-                final String value = sharedPreferences.getString(preference.getKey(), "");
-                if (value.equals(getString(R.string.english_value))) {
-                    settings.putExtra(getString(R.string.pref_language_key), getString(R.string.english_value));
-                    startActivity(settings);
-                    getActivity().overridePendingTransition(0, 0);
-                    getActivity().finish();
-                } else if (value.equals(getString(R.string.indonesia_value))) {
-                    settings.putExtra(getString(R.string.pref_language_key), getString(R.string.indonesia_value));
-                    startActivity(settings);
-                    getActivity().overridePendingTransition(0, 0);
-                    getActivity().finish();
-                }
+                startActivity(settings);
+                getActivity().overridePendingTransition(0, 0);
+                getActivity().finish();
             }
 
         }

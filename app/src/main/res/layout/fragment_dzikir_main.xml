@@ -7,105 +7,106 @@
     android:layout_height="match_parent">
 
     <LinearLayout
-        android:focusableInTouchMode="true"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="?backgroundColor"
+        android:focusableInTouchMode="true"
         android:orientation="vertical"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         tools:context="com.nacoda.dzikirqu.mvp.MainActivity">
 
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
+        <android.support.design.widget.AppBarLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="?appBarColor"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            app:contentInsetEnd="0dp"
-            app:contentInsetLeft="0dp"
-            app:contentInsetRight="0dp"
-            app:contentInsetStart="0dp"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+            android:background="?attr/appBarColor"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
-            <RelativeLayout
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="8dp"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content"
+                android:background="?appBarColor"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:contentInsetEnd="0dp"
+                app:contentInsetLeft="0dp"
+                app:contentInsetRight="0dp"
+                app:contentInsetStart="0dp"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
-                <TextView
-                    android:id="@+id/title"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:padding="6dp"
-                    android:text="DzikirQu"
-                    android:textColor="?titleColor"
-                    android:textSize="40sp" />
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
 
-                <ImageView
-                    android:id="@+id/drawer_button"
-                    android:layout_width="44dp"
-                    android:layout_height="44dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:padding="6dp"
-                    android:src="?menuIcon" />
+                    <TextView
+                        android:id="@+id/title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:padding="6dp"
+                        android:text="DzikirQu"
+                        android:textColor="?titleColor"
+                        android:textSize="40sp" />
+
+                    <ImageView
+                        android:id="@+id/drawer_button"
+                        android:layout_width="44dp"
+                        android:layout_height="44dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:padding="6dp"
+                        android:src="?menuIcon" />
 
 
-            </RelativeLayout>
-        </android.support.v7.widget.Toolbar>
+                </RelativeLayout>
+            </android.support.v7.widget.Toolbar>
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0.4dp"
-            android:background="@drawable/shadow_light" />
+        </android.support.design.widget.AppBarLayout>
 
         <LinearLayout
             android:id="@+id/info"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
             android:background="?appBarColor"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingLeft="16dp"
+            android:paddingTop="8dp"
+            android:paddingRight="16dp">
 
             <TextView
                 android:id="@+id/subtitle"
-                android:layout_marginTop="8dp"
                 android:layout_width="match_parent"
-                android:textAlignment="center"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
                 android:fontFamily="serif"
                 android:text="DzikirQu"
-                android:textColor="@color/colorTextGrey"
+                android:textAlignment="center"
+                android:textColor="?attr/descTextColor"
                 android:textSize="30sp" />
 
             <TextView
                 android:id="@+id/description"
-                android:textAlignment="center"
-                android:layout_marginRight="4dp"
-                android:layout_marginLeft="4dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"
                 android:layout_marginTop="8dp"
                 android:text="This app was specially made for muslims to be able to read the daily dzikir from their handheld devices. We hope that this app will be of use to the Ummah. Thank you!"
-                android:textColor="@color/colorTextGrey"
+                android:textAlignment="center"
+                android:textColor="?attr/descTextColor"
                 android:textSize="14sp" />
         </LinearLayout>
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="20dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginLeft="16dp"
-            android:background="?frameBackground"
-             />
+            android:background="?attr/appBarColor" />
 
 
         <android.support.v7.widget.RecyclerView

@@ -25,7 +25,7 @@
                 android:layout_margin="4dp"
                 android:background="?selectableItemBackgroundBorderless"
                 android:padding="8dp"
-                android:src="@drawable/ic_back_white" />
+                android:src="@drawable/ic_back_dark" />
 
         </RelativeLayout>
 
@@ -43,7 +43,7 @@
                 android:layout_margin="4dp"
                 android:background="?selectableItemBackgroundBorderless"
                 android:padding="8dp"
-                android:src="@drawable/ic_share_white" />
+                android:src="@drawable/ic_share_dark" />
 
         </RelativeLayout>
 

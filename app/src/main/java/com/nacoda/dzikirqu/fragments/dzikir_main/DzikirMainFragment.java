@@ -60,7 +60,7 @@ public class    DzikirMainFragment extends MvpFragment<DzikirMainPresenter, Frag
         mvpPresenter.getData(getActivity(), preferences.getString(Prefs.LANGUAGE, Prefs.LANGUAGE_DEFAULT));
         LayoutInflater inflater = (LayoutInflater) getActivity().getSystemService(LAYOUT_INFLATER_SERVICE);
         assert inflater != null;
-        v = inflater.inflate(R.layout.window_main, null);
+        v = inflater.inflate(R.layout.menu_popup_main, null);
         initPopupWindow();
     }
 
@@ -113,10 +113,10 @@ public class    DzikirMainFragment extends MvpFragment<DzikirMainPresenter, Frag
         popupWindow.showAsDropDown(drawerButton);
         settingsText = v.findViewById(R.id.settings_text);
         settingsText.setText(getLocalizedString(R.string.settings));
-        settingsText.setTypeface(getFont(getActivity(), Fonts.QUICKBOOK));
+        settingsText.setTypeface(getFont(getActivity(), Fonts.MONTSERRATLIGHT));
         aboutText = v.findViewById(R.id.about_text);
         aboutText.setText(getLocalizedString(R.string.about));
-        aboutText.setTypeface(getFont(getActivity(), Fonts.QUICKBOOK));
+        aboutText.setTypeface(getFont(getActivity(), Fonts.MONTSERRATLIGHT));
         settings = v.findViewById(R.id.settings);
 
         settings.setOnClickListener(view -> {

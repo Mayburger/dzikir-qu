@@ -48,7 +48,7 @@
                     android:paddingEnd="24dp"
                     android:paddingStart="8dp"
                     android:paddingTop="24dp"
-                    android:src="@drawable/ic_back_white" />
+                    android:src="@drawable/ic_back_dark" />
             </RelativeLayout>
 
             <RelativeLayout
