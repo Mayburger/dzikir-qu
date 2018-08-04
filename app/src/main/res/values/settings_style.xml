@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Settings.Theme.light" parent="Theme.AppCompat.Light.NoActionBar">
+
+        <!--Default-->
+        <item name="appBarColor">@color/colorPrimary</item>
+        <item name="backgroundColor">@color/colorWhite</item>
+        <!--Default-->
+
+        <!--Text Color-->
+        <item name="android:textColorPrimary">@color/colorTextPrimaryLight</item>
+        <item name="android:textColorSecondary">@color/colorTextSecondaryLight</item>
+        <item name="android:textColorTertiary">@color/colorTextTertiaryLight</item>
+        <!--Text Color-->
+
+    </style>
+
+    <style name="Settings.Theme.dark" parent="Theme.AppCompat.Light.NoActionBar">
+
+        <!--Default-->
+        <item name="appBarColor">@color/colorDarkerBackground</item>
+        <item name="backgroundColor">@color/colorDarkBackground</item>
+        <!--Default-->
+
+        <!--Text Color-->
+        <item name="android:textColorPrimary">@color/colorTextPrimaryDark</item>
+        <item name="android:textColorSecondary">@color/colorTextSecondaryDark</item>
+        <item name="android:textColorTertiary">@color/colorTextTertiaryDark</item>
+        <!--Text Color-->
+
+        <item name="colorAccent">@color/colorTextGrey</item>
+
+        <item name="android:dialogTheme">@style/Preference.DialogPreference.Dark</item>
+        <item name="android:alertDialogTheme">@style/Preference.DialogPreference.Dark</item>
+    </style>
+
+    <!--The style for the dark themed alert dialog-->
+    <style name="Preference.DialogPreference.Dark" parent="Theme.AppCompat.Dialog">
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:background">@color/colorDarkBackground</item>
+        <item name="colorAccent">@color/colorTextGrey</item>
+    </style>
+    <!--The style for the dark themed alert dialog-->
+
+</resources>
